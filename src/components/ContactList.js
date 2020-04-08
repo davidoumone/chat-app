@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "./Contact";
 
 const users = [
   {
@@ -31,7 +32,7 @@ const users = [
 
 function ContactList(props) {
     const table = users.map(function(user) {
-        return <p>{user.name}</p>
+        return <Contact name={user.name} avatar={user.avatar} online={user.online}/>
     })
   
   console.log(table);
