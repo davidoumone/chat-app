@@ -1,6 +1,6 @@
 import React from 'react';
 import Contact from './components/Contact';
-
+import ContactList from './components/ContactList';
 const katherine= {
   name: "Katherine Hunt",
   avatar: "https://randomuser.me/api/portraits/women/37.jpg",
@@ -26,6 +26,7 @@ function App() {
       <Contact {...katherine} />
       <Contact {...janice} />
       <Contact {...fred} />
+      <ContactList/>
     </div>
   );
 }
