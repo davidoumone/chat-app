@@ -6,22 +6,28 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      online: false,
+      online: this.props.online,
     };
   }
+
+  changeStatus = () => {
+    this.setState({online: !this.state.online});
+  }
+
   render() {
     // const { name, avatar, online } = props;
+    const {online} = this.state;
     return (
       <div className="Contact">
         <img className="avatar" src={this.props.avatar} alt={this.props.name} />
         <div>
           <p className="name">{this.props.name}</p>
-          <div className="status">
+          <div className="status" onClick={this.changeStatus}>
             <div
-              className={this.props.online ? "status-online" : "status-offline"}
+              className={online ? "status-online" : "status-offline"}
             />
             <p className="status-text">
-              {this.props.online ? "online" : "offline"}
+              {online ? "online" : "offline"}
             </p>
           </div>
         </div>
